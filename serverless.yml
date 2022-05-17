@@ -1,0 +1,21 @@
+service: ts-service
+
+frameworkVersion: '3'
+
+package:
+  excludeDevDependencies: true
+  exclude:
+    - "node_modules/.cache/**"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  profile: sls-test
+  httpApi:
+    cors: true
+
+functions: ${file(functions.yml):functions}
+
+plugins:
+  - serverless-offline

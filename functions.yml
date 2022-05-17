@@ -1,0 +1,19 @@
+functions:
+  user:
+    handler: handler.user
+    events:
+      - httpApi:
+          path: '/users'
+          method: any
+      - httpApi:
+          path: '/users/{any+}'
+          method: any
+  order:
+    handler: handler.order
+    events:
+      - httpApi:
+          path: '/orders'
+          method: any
+      - httpApi:
+          path: '/orders/{any+}'
+          method: any
