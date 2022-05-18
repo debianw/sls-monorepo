@@ -17,3 +17,12 @@ functions:
       - httpApi:
           path: '/orders/{any+}'
           method: any
+  fetchDevices:
+    handler: src/device/handler.fetchDevices
+    events:
+      - httpApi:
+          path: '/devices'
+          method: GET
+      - httpApi:
+          path: '/device/:id'
+          method: GET

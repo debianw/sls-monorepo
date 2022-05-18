@@ -2,10 +2,17 @@ service: ts-service
 
 frameworkVersion: '3'
 
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js' # Name of webpack configuration file
+    includeModules: false # Node modules configuration for packaging
+    packager: 'yarn' # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
+
 package:
-  excludeDevDependencies: true
-  exclude:
-    - "node_modules/.cache/**"
+  individually: true
+  patterns:
+    - '!node_modules'
 
 provider:
   name: aws
@@ -19,3 +26,4 @@ functions: ${file(functions.yml):functions}
 
 plugins:
   - serverless-offline
+  - serverless-webpack

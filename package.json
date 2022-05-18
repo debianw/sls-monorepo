@@ -10,6 +10,9 @@
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
-    "serverless-offline": "^8.8.0"
+    "serverless-offline": "^8.8.0",
+    "serverless-webpack": "^5.7.1",
+    "webpack": "^5.72.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }
