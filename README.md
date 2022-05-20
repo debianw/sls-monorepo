@@ -1,4 +1,4 @@
-# TestSmarter Serverless Architecture
+# Serverless Mono Repo Architecture
 
 ### Install 
 
