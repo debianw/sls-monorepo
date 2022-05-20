@@ -3,12 +3,7 @@ const isArray = arr => Array.isArray(arr)
 module.exports = fn => async (req, res) => {
   try {
     const data = await fn(req, res)
-
-    if (!data || (data && data.error)) {
-      return data
-    }
-
-    return isArray(data) ? { count: data.length, data } : { data }
+    return data
   } catch (error) {
     console.log('ERROR', error)
     const { message, statusCode } = error

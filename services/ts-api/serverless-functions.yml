@@ -1,15 +1,6 @@
 functions:
-  user:
-    handler: handler.user
-    events:
-      - httpApi:
-          path: '/users'
-          method: any
-      - httpApi:
-          path: '/users/{any+}'
-          method: any
   order:
-    handler: handler.order
+    handler: src/order/handler.service
     events:
       - httpApi:
           path: '/orders'

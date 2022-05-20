@@ -1,0 +1,21 @@
+service: ts-service
+
+frameworkVersion: '3'
+
+custom:
+  bundle:
+    linting: false
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  profile: sls-test
+  httpApi:
+    cors: true
+
+functions: ${file(serverless-functions.yml):functions}
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
